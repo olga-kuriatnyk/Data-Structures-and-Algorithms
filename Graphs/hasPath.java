@@ -24,13 +24,13 @@ public class hasPath {
         constructGraph();
 
         // test hasPath
-        if (hasPath('f', 'h')) {
+        if (hasPathD('f', 'h')) {
             System.out.println("True"); // expected
         } else {
             System.out.println("False");
         }
 
-        if (hasPath('k', 'h')) {
+        if (hasPathD('k', 'h')) {
             System.out.println("True");
         } else {
             System.out.println("False"); // expected
@@ -51,12 +51,12 @@ public class hasPath {
     }
 
     // DFS recursive solution
-    public static boolean hasPath(char src, char dst) {
+    public static boolean hasPathD(char src, char dst) {
         if (src == dst)
             return true;
 
         for (char neighbor : graph.get(src)) {
-            if (hasPath(neighbor, dst)) {
+            if (hasPathD(neighbor, dst)) {
                 return true;
             }
         }
