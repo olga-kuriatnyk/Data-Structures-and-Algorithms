@@ -63,17 +63,12 @@ public class undirectedPath {
             if (!graph.containsKey(edge[0])) {
                 graph.put(edge[0], new ArrayList<Character>());
             }
-            List<Character> list = graph.get(edge[0]);
-            list.add(edge[1]);
-            graph.put(edge[0], list);
+            graph.get(edge[0]).add(edge[1]);
 
             if (!graph.containsKey(edge[1])) {
                 graph.put(edge[1], new ArrayList<Character>());
             }
-            list = graph.get(edge[1]);
-            list.add(edge[0]);
-            graph.put(edge[1], list);
-
+            graph.get(edge[1]).add(edge[0]);
         }
     }
 }
