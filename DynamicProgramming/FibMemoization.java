@@ -17,18 +17,12 @@ public class FibMemoization {
         System.out.println(fibRecursive(8)); // 21
 
         // dynamic solution, memoization tests
-        memo.put(0, 0);
-        memo.put(1, 1);
         System.out.println(fib(6)); // 8
 
         memo.clear();
-        memo.put(0, 0);
-        memo.put(1, 1);
         System.out.println(fib(8)); // 21
 
         memo.clear();
-        memo.put(0, 0);
-        memo.put(1, 1);
         System.out.println(fib(48)); // 512559680
     }
 
@@ -40,6 +34,10 @@ public class FibMemoization {
         if (memo.containsKey(n)) {
             return memo.get(n);
         }
+        if (n == 0)
+            return 0;
+        if (n == 1)
+            return 1;
 
         memo.put(n, fib(n - 1) + fib(n - 2));
         return memo.get(n);
