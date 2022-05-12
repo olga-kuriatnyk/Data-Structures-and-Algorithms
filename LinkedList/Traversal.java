@@ -35,7 +35,7 @@ public class Traversal {
         printLinkedListRecursive(head.next);
     } 
     
-    public static  ArrayList<Character>linkedListValues(Node head) {
+    public static ArrayList<Character> linkedListValues(Node head) {
         Node curr = head;
         ArrayList<Character> list = new ArrayList<Character>();
         while (curr != null) {
