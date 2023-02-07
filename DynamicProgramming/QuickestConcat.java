@@ -1,3 +1,12 @@
+// Write a function, quickestConcat, that takes in a string and an array of words as arguments.
+// The function should return the minimum number of words needed to build the string by
+// concatenating words of the array.
+
+// You may use words of the array as many times as needed.
+
+// n - # of words, s - string length
+// Time: O(ns), Space: O(s)
+
 package DynamicProgramming;
 
 import java.util.HashMap;
@@ -95,37 +104,6 @@ public class QuickestConcat {
         System.out.println("test_07: " +quickestConcat(s, words, memo)); // 7
     }
 
-    // keep track of startIndx and endIndx. staring with 0 and n-1 (n # of chars in String)
-    // if start > end return 0
-    // curr = end
-    // creat a variable for minCount
-    // while curr > start 
-        // check if subString is in words 
-        // if yes, add 1 to the count + make a recursive call where start=curr+1, and end=end
-        // try to reset minCount (minCoiunt, result of prev call) 
-    // return minCount
-
-    // private static int quickestConcat(String s, Set<String> words) {
-    //     if (s.length() == 0) return 0;
-
-    //     int minCount = Integer.MAX_VALUE;
-
-    //     for (int i = s.length(); i >= 0; i--) {
-    //         String word = s.substring(0, i);
-    //         System.out.println("word " + word);
-    //         if (words.contains(word)) {
-    //             System.out.println("\t start recursive call");
-    //             String slice = s.substring(i);
-    //             // System.out.println("post "+postfix);
-    //             int attempt = 1 + quickestConcat(slice, words);
-
-    //             minCount = Math.min(minCount, attempt);
-    //         }
-    //     }
-    //     System.out.println(minCount);
-
-    //     return minCount;
-    // }
 
     private static int quickestConcat(String s, Set<String> words, Map<String, Integer> memo) {
         if (s.isEmpty()) return 0;
